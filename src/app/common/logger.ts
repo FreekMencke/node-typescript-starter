@@ -8,7 +8,7 @@ export class Logger {
     Logger.log(`${name}:`, ...message);
   }
 
-  private static getFormattedTime(includeDate?: boolean): string {
+  private static getFormattedTime(includeDate: boolean = true): string {
     const options: Intl.DateTimeFormatOptions = {
       hour: '2-digit',
       minute: '2-digit',
