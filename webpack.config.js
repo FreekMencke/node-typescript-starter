@@ -13,8 +13,8 @@ module.exports = env => {
     target: 'node',
     devtool: false,
     node: {
-      __dirname: false,
-      __filename: false,
+      __dirname: false, // Fix for native node __dirname
+      __filename: false // Fix for native node __filename
     },
     output: {
       filename: packageJson.name + '.js',
@@ -25,7 +25,7 @@ module.exports = env => {
       modules: ['node_modules', 'src']
     },
     stats: {
-      modules: false,
+      modules: false, // We don't need to see this
     },
     module: {
       rules: [
@@ -41,13 +41,18 @@ module.exports = env => {
         VERSION: JSON.stringify(packageJson.version),
         DEVELOP: env.mode === 'development'
       }),
+      // Use module replacement to use different configs for dev and prod
+      new webpack.NormalModuleReplacementPlugin(
+        /config.ts/,
+        env.mode === 'development' ? 'config.ts' : 'config.prod.ts'
+      )
     ],
   };
 
   if (env.analyse) {
     const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
     config.plugins.push(new BundleAnalyzerPlugin({
-      analyzerMode: 'static'
+      analyzerMode: 'static' // Generates file instead of starting a web server
     }));
   }
 
