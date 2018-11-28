@@ -6,7 +6,7 @@
 
 # Node TypeScript Seed
 
-Since I make a lot of projects, I created this **Node TypeScript Seed** to easily create a new Node project in TypeScript.
+Since I make a lot of projects, I created this **Node TypeScript Seed** to easily create a new Node project with TypeScript.
 
 ## Getting started
 
