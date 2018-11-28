@@ -8,6 +8,7 @@
       "dom",
       "es2018"
     ],
+    "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
