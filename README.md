@@ -1,0 +1,1 @@
+# Node TypeScript Seed
