@@ -19,7 +19,7 @@ export class Logger {
     const date = new Date();
     const timeString = date.toLocaleTimeString('en-US', options);
     const dateString = `${date.getUTCFullYear()}/${date.getUTCMonth() + 1}/${date.getUTCDate()}`;
-    return includeDate ? `${dateString} - ${timeString}` : timeString;
+    return includeDate ? `${dateString} ${timeString}` : timeString;
   }
 
 }
