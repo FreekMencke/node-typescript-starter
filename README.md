@@ -7,3 +7,11 @@
 # Node TypeScript Seed
 
 Since I make a lot of projects, I created this **Node TypeScript Seed** to easily create a new Node project in TypeScript.
+
+## Getting started
+
+- `git clone https://github.com/toxsickcoder/node-typescript-seed.git`
+- `npm install`
+- `npm start`
+
+The application will build and run the **Node Typescript Seed**.
