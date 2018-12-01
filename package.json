@@ -1,19 +1,19 @@
 {
-  "name": "node-typescript-seed",
+  "name": "node-typescript-starter",
   "version": "0.0.1",
   "author": "Freek Mencke",
   "homepage": "https://twitter.com/FreekMencke",
   "repository": {
     "type": "git",
-    "url": "https://github.com/toxsickcoder/node-typescript-seed"
+    "url": "https://github.com/toxsickcoder/node-typescript-starter"
   },
   "engines": {
     "node": ">=10.14.0",
     "npm": ">=6.4.1"
   },
   "scripts": {
-    "start": "webpack --config webpack.config.js --progress --env.mode=development && node dist/node-typescript-seed.js",
-    "start:prod": "webpack --config webpack.config.js --progress --env.mode=production && node dist/node-typescript-seed.js",
+    "start": "webpack --config webpack.config.js --progress --env.mode=development && node dist/node-typescript-starter.js",
+    "start:prod": "webpack --config webpack.config.js --progress --env.mode=production && node dist/node-typescript-starter.js",
     "build:prod": "webpack --config webpack.config.js --progress --env.mode=production",
     "build:ci": "webpack --config webpack.config.js --env.mode=production",
     "analyse:dev": "webpack --config webpack.config.js --progress --env.mode=development --env.analyse && start dist/report.html",
@@ -22,14 +22,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "10.12.10",
-    "clean-webpack-plugin": "1.0.0",
-    "ts-loader": "5.3.1",
-    "tslint": "5.11.0",
-    "tslint-eslint-rules": "5.4.0",
-    "typescript": "3.1.6",
-    "webpack": "4.26.1",
-    "webpack-bundle-analyzer": "3.0.3",
-    "webpack-cli": "3.1.2"
+    "@types/node": "^10.12.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "ts-loader": "^5.3.0",
+    "tslint": "^5.11.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.2.0",
+    "webpack": "^4.26.0",
+    "webpack-bundle-analyzer": "^3.0.0",
+    "webpack-cli": "^3.1.0"
   }
 }
