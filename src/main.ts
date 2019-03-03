@@ -3,7 +3,6 @@ import { Logger } from './app/common/logger';
 
 Logger.logTask('SYSTEM', 'STARTING');
 
-const app = new App();
-app.logAppInfo();
+new App().start();
 
 Logger.logTask('SYSTEM', 'FINISHED');

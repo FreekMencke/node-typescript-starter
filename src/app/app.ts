@@ -1,18 +1,19 @@
+import { config } from '../config/config.dev';
 import { Logger } from './common/logger';
-import { config } from '../config/config';
 
 export class App {
-
-  constructor() {
-    Logger.logTask('APP', 'RUNNING app.ts CONSTRUCTOR');
+  start(): void {
+    this.logAppInfo();
   }
 
-  logAppInfo(): void {
-    Logger.logTask('APP', {
-      develop: DEVELOP,
-      version: VERSION,
-      config: config
-    });
+  private logAppInfo(): void {
+    Logger.logTask(
+      'APP',
+      JSON.stringify({
+        develop: DEVELOP,
+        version: VERSION,
+        config: config,
+      })
+    );
   }
-
 }
