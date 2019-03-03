@@ -13,6 +13,7 @@
     "start:prod": "webpack --watch --config webpack.config.js --progress --env.mode=production && node dist/node-typescript-starter.js",
     "build:prod": "webpack --config webpack.config.js --progress --env.mode=production",
     "build:ci": "webpack --config webpack.config.js --env.mode=production",
+    "build:docker": "docker build --rm -t toxsickcoder/node-typescript-starter:latest .",
     "analyse:dev": "webpack --config webpack.config.js --progress --env.mode=development --env.analyse && start dist/report.html",
     "analyse:prod": "webpack --config webpack.config.js --progress --env.mode=production --env.analyse && start dist/report.html",
     "lint": "tslint --project ."
