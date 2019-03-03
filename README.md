@@ -15,3 +15,14 @@ Since I make a lot of projects, I created this **Node TypeScript Starter** to ea
 - `npm start`
 
 The application will build and run the **Node Typescript Starter**.
+
+## Features
+
+- Travis CI
+- Docker
+- Webpack watch (nodemon)
+- Strict tsconfig
+- TSLint
+- Editorconfig
+- BundleAnalyser
+- Replacement of config files per environment
