@@ -37,7 +37,7 @@ module.exports = env => {
       ],
     },
     plugins: [
-      new CleanWebpackPlugin(['./dist']),
+      new CleanWebpackPlugin(),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(packageJson.version),
         DEVELOP: env.mode === 'development',
