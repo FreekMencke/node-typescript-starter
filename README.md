@@ -2,8 +2,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/toxsickcoder/node-typescript-starter.svg)](https://github.com/toxsickcoder/node-typescript-starter/issues)
 [![GitHub license](https://img.shields.io/github/license/toxsickcoder/node-typescript-starter.svg)](https://github.com/toxsickcoder/node-typescript-starter/blob/master/LICENSE)
 
-
-
 # Node TypeScript Starter
 
 Since I make a lot of projects, I created this **Node TypeScript Starter** to easily create a new Node project with TypeScript.
@@ -18,11 +16,11 @@ The application will build and run the **Node Typescript Starter**.
 
 ## Features
 
-- Travis CI
-- Docker
-- Webpack watch (nodemon)
-- Strict tsconfig
 - TSLint
-- Editorconfig
+- Strict TSConfig
+- EditorConfig
+- Different configs for Dev and Prod
+- Webpack watch (nodemon)
 - BundleAnalyser
-- Replacement of config files per environment
+- Docker
+- Travis CI (Docker build)

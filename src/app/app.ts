@@ -1,8 +1,14 @@
-import { config } from '../config/config.dev';
+import { config } from '../config/config';
 import { Logger } from './common/logger';
 
 export class App {
-  start(): void {
+  static run(): App {
+    const app = new App();
+    app.start();
+    return app;
+  }
+
+  private start(): void {
     this.logAppInfo();
   }
 

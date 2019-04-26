@@ -44,13 +44,13 @@ module.exports = env => {
       }),
       // Use module replacement to use different configs for dev and prod
       new webpack.NormalModuleReplacementPlugin(
-        /config.ts/,
+        /config[\\/]config.ts/,
         env.mode === 'development' ? 'config.dev.ts' : 'config.ts'
       ),
     ],
   };
 
-  if (env.mode === 'development') {
+  if (env.nodemon) {
     config.plugins.push(new NodemonPlugin());
   }
 
