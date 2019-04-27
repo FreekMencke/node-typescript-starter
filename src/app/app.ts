@@ -13,13 +13,10 @@ export class App {
   }
 
   private logAppInfo(): void {
-    Logger.logTask(
-      'APP',
-      JSON.stringify({
-        develop: DEVELOP,
-        version: VERSION,
-        config: config,
-      })
-    );
+    Logger.logTask('APP', {
+      develop: DEVELOP,
+      version: VERSION,
+      config: config,
+    });
   }
 }

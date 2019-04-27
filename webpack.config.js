@@ -7,19 +7,18 @@ const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const packageJson = require('./package.json');
 
-module.exports = env => {
+module.exports = (env = {}) => {
   const config = {
     entry: ['./src/main.ts'],
-    mode: env.mode,
+    mode: env.development ? 'development' : 'production',
     target: 'node',
-    devtool: env.mode === 'development' ? 'cheap-eval-source-map' : false,
+    devtool: env.development ? 'cheap-eval-source-map' : false,
     node: {
       __dirname: false, // Fix for native node __dirname
       __filename: false, // Fix for native node __filename
     },
     output: {
-      filename: packageJson.name + '.js',
-      path: path.resolve(__dirname, 'dist'),
+      filename: `${packageJson.name}.js`,
     },
     resolve: {
       extensions: ['.ts', '.js'],
@@ -51,6 +50,7 @@ module.exports = env => {
   };
 
   if (env.nodemon) {
+    config.watch = true;
     config.plugins.push(new NodemonPlugin());
   }
 
