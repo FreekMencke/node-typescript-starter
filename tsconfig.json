@@ -5,10 +5,10 @@
     "moduleResolution": "node",
     "lib": ["dom", "es2018"],
     "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "removeComments": true,
+    "resolveJsonModule": true,
     "strict": true,
     "typeRoots": ["node_modules/@types"]
   },
