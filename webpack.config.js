@@ -12,7 +12,8 @@ module.exports = (env = {}) => {
     entry: ['./src/main.ts'],
     mode: env.development ? 'development' : 'production',
     target: 'node',
-    devtool: env.development ? 'cheap-eval-source-map' : false,
+    // devtool alternatives: cheap-module-eval-source-map (faster, less details) or cheap-eval-source-map (fastest, even less details)
+    devtool: env.development ? 'inline-source-map' : false,
     node: {
       __dirname: false, // Fix for native node __dirname
       __filename: false, // Fix for native node __filename
@@ -32,6 +33,7 @@ module.exports = (env = {}) => {
         {
           test: /\.ts$/,
           use: 'ts-loader',
+          exclude: /node_modules/,
         },
       ],
     },

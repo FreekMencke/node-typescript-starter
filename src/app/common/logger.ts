@@ -20,7 +20,7 @@ export class Logger {
     const timeString = date.toLocaleTimeString('en-US', options);
 
     const year = date.getUTCFullYear();
-    const month = this.prependZeroIfNecessairy(date.getUTCMonth() + 1);
+    const month = this.prependZeroIfNecessairy(date.getUTCMonth() + 1); // months start from zero
     const day = this.prependZeroIfNecessairy(date.getUTCDate());
     const dateString = `${year}/${month}/${day}`;
 
