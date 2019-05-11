@@ -41,12 +41,12 @@ module.exports = (env = {}) => {
       new CleanWebpackPlugin(),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(packageJson.version),
-        DEVELOP: env.mode === 'development',
+        DEVELOP: env.development,
       }),
       // Use module replacement to use different configs for dev and prod
       new webpack.NormalModuleReplacementPlugin(
         /[\\/]src[\\/]config[\\/]config.ts$/, // [\\/] works on all operating systems.
-        env.mode === 'development' ? 'config.dev.ts' : 'config.ts'
+        env.development ? 'config.dev.ts' : 'config.ts'
       ),
     ],
   };
