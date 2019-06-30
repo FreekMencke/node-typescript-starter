@@ -7,7 +7,6 @@
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "removeComments": true,
-    "resolveJsonModule": true,
     "strict": true,
     "typeRoots": ["node_modules/@types"]
   },

@@ -1,10 +1,9 @@
 'use strict';
 
-const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { DefinePlugin, NormalModuleReplacementPlugin } = require('webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const NodemonPlugin = require('nodemon-webpack-plugin');
-
 const packageJson = require('./package.json');
 
 module.exports = (env = {}) => {
@@ -39,12 +38,12 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new webpack.DefinePlugin({
+      new DefinePlugin({
         VERSION: JSON.stringify(packageJson.version),
         DEVELOP: env.development,
       }),
       // Use module replacement to use different configs for dev and prod
-      new webpack.NormalModuleReplacementPlugin(
+      new NormalModuleReplacementPlugin(
         /[\\/]src[\\/]config[\\/]config.ts$/, // [\\/] works on all operating systems.
         env.development ? 'config.dev.ts' : 'config.ts'
       ),
@@ -57,7 +56,6 @@ module.exports = (env = {}) => {
   }
 
   if (env.analyse) {
-    const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
     config.plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: 'static', // Generates file instead of starting a web server
