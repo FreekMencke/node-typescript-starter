@@ -15,15 +15,7 @@
         "SwitchCase": 1
       }
     ],
-    "trailing-comma": [
-      true,
-      {
-        "objects": "always",
-        "arrays": "always",
-        "functions": "never",
-        "typeLiterals": "ignore"
-      }
-    ],
+    "trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
     "typedef": [true, "call-signature", "parameter"]
   }
 }
