@@ -1,6 +1,6 @@
 {
   "name": "node-typescript-starter",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Freek Mencke",
   "homepage": "https://twitter.com/FreekMencke",
   "repository": {
@@ -21,15 +21,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^10.14.10",
+    "@types/node": "^10.14.12",
     "clean-webpack-plugin": "^3.0.0",
     "nodemon-webpack-plugin": "^4.0.8",
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.5.2",
-    "webpack": "^4.35.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3",
     "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.6"
   }
 }
