@@ -1,21 +1,41 @@
 {
-  "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],
   "rules": {
-    "indent": [true, "spaces"],
+    "indent": [
+      true,
+      "spaces"
+    ],
     "max-classes-per-file": false,
     "no-consecutive-blank-lines": true,
-    "no-duplicate-variable": [true, "check-parameters"],
-    "prefer-const": true,
-    "quotemark": [true, "single", "avoid-escape", "avoid-template"],
-    "semicolon": [true, "always"],
-    "ter-indent": [
+    "no-console": [
+      true
+    ],
+    "no-duplicate-variable": [
       true,
-      2,
+      "check-parameters"
+    ],
+    "no-return-await": true,
+    "prefer-const": true,
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape",
+      "avoid-template"
+    ],
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "trailing-comma": [
+      true,
       {
-        "SwitchCase": 1
+        "multiline": "always",
+        "singleline": "never"
       }
     ],
-    "trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
-    "typedef": [true, "call-signature", "parameter"]
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter"
+    ]
   }
 }

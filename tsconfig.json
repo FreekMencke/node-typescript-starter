@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "lib": ["dom", "es2018"],
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "noUnusedLocals": true,
     "removeComments": true,
     "strict": true,
