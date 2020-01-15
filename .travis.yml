@@ -1,10 +1,9 @@
 language: minimal
 dist: trusty
-node_js: '10'
 
 branches:
   only:
-  - master
+    - master
 
 services:
   - docker
