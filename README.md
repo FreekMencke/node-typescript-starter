@@ -16,7 +16,7 @@ The application will build and run the **Node Typescript Starter**.
 
 ## Features
 
-- TSLint
+- TypeScript ESLint (TSLint is deprecated)
 - Strict TSConfig
 - EditorConfig
 - Different configs for Dev and Prod
