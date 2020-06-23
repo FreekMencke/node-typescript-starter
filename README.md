@@ -16,11 +16,13 @@ The application will build and run the **Node Typescript Starter**.
 
 ## Features
 
-- TypeScript ESLint (TSLint is deprecated)
+- TypeScript ESLint 
 - Strict TSConfig
 - EditorConfig
+- Prettier
 - Different configs for Dev and Prod
 - Webpack watch (nodemon)
 - BundleAnalyser
 - Docker
 - Travis CI (Docker build)
+- Heroku Deploy
