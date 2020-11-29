@@ -5,10 +5,12 @@ const { DefinePlugin, NormalModuleReplacementPlugin } = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 const packageJson = require('./package.json');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = (env = {}) => {
   const config = {
     entry: ['./src/main.ts'],
+    externals:[nodeExternals()],
     mode: env.development ? 'development' : 'production',
     target: 'node',
     // devtool alternatives: cheap-module-eval-source-map (faster, less details) or cheap-eval-source-map (fastest, even less details)
