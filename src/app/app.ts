@@ -10,13 +10,18 @@ export class App {
 
   private start(): void {
     this.logAppInfo();
+    this.logAppError();
   }
 
   private logAppInfo(): void {
-    Logger.logTask('APP', {
+    Logger.instance.logTask(App.name, {
       develop: DEVELOP,
       version: VERSION,
       config: config,
     });
+  }
+
+  private logAppError(): void {
+    Logger.instance.logError(App.name, "an error occurred:", "additional error info");
   }
 }

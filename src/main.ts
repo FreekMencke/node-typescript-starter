@@ -1,8 +1,10 @@
 import { App } from './app/app';
 import { Logger } from './app/common/logger';
 
-Logger.logTask('SYSTEM', 'STARTING');
+(function System() {
+  Logger.instance.logTask(System.name, 'STARTING');
 
-App.run();
+  App.run();
 
-Logger.logTask('SYSTEM', 'FINISHED');
+  Logger.instance.logTask(System.name, 'FINISHED');
+})();
