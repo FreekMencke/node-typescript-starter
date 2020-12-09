@@ -1,52 +1,20 @@
 import { ILogger } from "./i-logger";
+import { LogLevel } from "./log-level.enum";
 
 export class Logger implements ILogger {
   private static internalInstance: Logger;
 
-  // https://stackoverflow.com/questions/9781218/how-to-change-node-jss-console-font-color
-  private static foregroundColorRed = "\x1b[31m";
-  private static foregroundColorGreen = "\x1b[32m";
-  private static foregroundResetColor = "\x1b[0m";
-
-  private static log(color: string, ...message: any[]): void {
-    if (!message || !message.length) {
-      return;
-    }
-    const stringifiedMessages: string[] = [];
-    message.forEach((oneMessage: any) => {
-      let outputMessage;
-      if (typeof oneMessage === 'string') {
-        outputMessage = oneMessage
-      } else {
-        outputMessage = JSON.stringify(oneMessage, null, 4);
-      }
-      stringifiedMessages.push(color);
-      stringifiedMessages.push(outputMessage);
-    });
-    // eslint-disable-next-line no-console
-    console.log(`[${Logger.getFormattedTime()}]`, ...stringifiedMessages);
-    console.log(Logger.foregroundResetColor);
+  private static getPrefix(nameParam: string) {
+    return `${Logger.getUpperCase(nameParam)}:`;
   }
 
-  static get instance(): ILogger {
-    if (!Logger.internalInstance) {
-      Logger.internalInstance = new Logger();
-    }
-
-    return Logger.internalInstance;
+  private static getUpperCase(name: string) {
+    const upperCaseName = name.toUpperCase();
+    return upperCaseName;
   }
 
-  private static getUpperCase(nameParam: string) {
-    const name = nameParam.toUpperCase();
-    return name;
-  }
-
-  logTask(nameParam: string, ...message: any[]): void {
-    Logger.log(Logger.foregroundColorGreen, `${Logger.getUpperCase(nameParam)}:`, ...message);
-  }
-
-  logError(nameParam: string, ...message: any[]) {
-    Logger.log(Logger.foregroundColorRed, `${Logger.getUpperCase(nameParam)}:`, ...message);
+  private static getTimeStamp() {
+    return `[${Logger.getFormattedTime()}]`;
   }
 
   private static getFormattedTime(includeDate: boolean = true): string {
@@ -71,5 +39,40 @@ export class Logger implements ILogger {
 
   private static prependZeroIfNecessary(number: number): string {
     return (number < 10 ? '0' : '') + number;
+  }
+
+  private static log(logLevel: LogLevel, name: string, ...message: any[]): void {
+    if (!message || !message.length) {
+      return;
+    }
+
+    switch (logLevel) {
+      case LogLevel.log:
+        // eslint-disable-next-line no-console
+        console.log(Logger.getTimeStamp(), Logger.getPrefix(name), ...message);
+        break;
+      case LogLevel.error:
+        // eslint-disable-next-line no-console
+        console.error(Logger.getTimeStamp(), Logger.getPrefix(name), ...message);
+        break;
+      default:
+        break;
+    }
+  }
+
+  static get instance(): ILogger {
+    if (!Logger.internalInstance) {
+      Logger.internalInstance = new Logger();
+    }
+
+    return Logger.internalInstance;
+  }
+
+  logTask(name: string, ...message: any[]): void {
+    Logger.log(LogLevel.log, name, ...message);
+  }
+
+  logError(name: string, ...message: any[]) {
+    Logger.log(LogLevel.error, name, ...message);
   }
 }
