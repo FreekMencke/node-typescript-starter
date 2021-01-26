@@ -2,6 +2,8 @@ import { config } from '../config/config';
 import { Logger } from './common/logger';
 
 export class App {
+  private readonly appName = 'App';
+
   static run(): App {
     const app = new App();
     app.start();
@@ -14,7 +16,7 @@ export class App {
   }
 
   private logAppInfo(): void {
-    Logger.instance.logTask(App.name, {
+    Logger.instance.logTask(this.appName, {
       develop: DEVELOP,
       version: VERSION,
       config: config,
@@ -22,6 +24,6 @@ export class App {
   }
 
   private logAppError(): void {
-    Logger.instance.logError(App.name, "an error occurred:", "additional error info");
+    Logger.instance.logError(this.appName, "an error occurred:", "additional error info");
   }
 }

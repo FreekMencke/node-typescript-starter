@@ -1,11 +1,9 @@
 import { App } from './app/app';
 import { Logger } from './app/common/logger';
 
-const System = () => {
-  Logger.instance.logTask(System.name, 'STARTING');
+const systemName = 'System';
+Logger.instance.logTask(systemName, 'STARTING');
 
-  App.run();
+App.run();
 
-  Logger.instance.logTask(System.name, 'FINISHED');
-};
-System();
+Logger.instance.logTask(systemName, 'FINISHED');
