@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -24,11 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-          
-      # Runs a single command using the runners shell
+
       - name: Docker build
         run: docker build --rm -t toxsickcoder/node-typescript-starter:latest .
 
       - name: Docker run
-        run: docker run --rm -it toxsickcoder/node-typescript-starter:latest
+        run: docker run --rm toxsickcoder/node-typescript-starter:latest
 
