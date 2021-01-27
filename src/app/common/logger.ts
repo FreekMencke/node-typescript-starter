@@ -21,14 +21,14 @@ export class Logger {
     const timeString = date.toLocaleTimeString('en-US', options);
 
     const year = date.getUTCFullYear();
-    const month = this.prependZeroIfNecessairy(date.getUTCMonth() + 1); // months start from zero
-    const day = this.prependZeroIfNecessairy(date.getUTCDate());
+    const month = this.prependZeroIfNecessary(date.getUTCMonth() + 1); // months start from zero
+    const day = this.prependZeroIfNecessary(date.getUTCDate());
     const dateString = `${year}/${month}/${day}`;
 
     return includeDate ? `${dateString} ${timeString}` : timeString;
   }
 
-  private static prependZeroIfNecessairy(number: number): string {
+  private static prependZeroIfNecessary(number: number): string {
     return (number < 10 ? '0' : '') + number;
   }
 }

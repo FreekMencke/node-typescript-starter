@@ -23,4 +23,4 @@ The application will build and run the **Node Typescript Starter**.
 - Webpack watch (nodemon)
 - BundleAnalyser
 - Docker
-- Travis CI (Docker build)
+- Github Action CI

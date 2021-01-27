@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES2020",
+    "module": "ES2020",
     "moduleResolution": "node",
-    "lib": ["dom", "es2018"],
+    "lib": ["dom", "es2020"],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
@@ -11,6 +11,7 @@
     "strict": true,
     "typeRoots": ["node_modules/@types"]
   },
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"],
   "exclude": ["node_modules"],
-  "include": ["src/**/*.ts"]
 }

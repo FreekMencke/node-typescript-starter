@@ -1,5 +1,6 @@
 'use strict';
 
+const { resolve } = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin, NormalModuleReplacementPlugin } = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -19,6 +20,7 @@ module.exports = (env = {}) => {
     },
     output: {
       filename: `${packageJson.name}.js`,
+      path: resolve(__dirname, 'dist'),
     },
     resolve: {
       extensions: ['.ts', '.js'],
