@@ -42,7 +42,7 @@ module.exports = (env = {}) => {
       new CleanWebpackPlugin(),
       new DefinePlugin({
         VERSION: JSON.stringify(packageJson.version),
-        DEVELOP: env.development,
+        DEVELOP: env.development ? true : false,
       }),
       // Use module replacement to use different configs for dev and prod
       new NormalModuleReplacementPlugin(
