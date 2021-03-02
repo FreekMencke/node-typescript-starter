@@ -16,6 +16,7 @@
     "start:prod": "webpack --progress --env nodemon",
     "build:prod": "webpack --progress",
     "build:ci": "webpack",
+    "build:ci-linux": "npm run build:ci -- --env linux",
     "build:docker": "docker build --rm -t toxsickcoder/$npm_package_name:latest .",
     "deploy:docker": "sh ./scripts/deploy.sh",
     "analyse:dev": "webpack --progress --env development --env analyse && start dist/report.html",

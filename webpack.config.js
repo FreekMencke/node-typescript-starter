@@ -2,7 +2,7 @@
 
 const { resolve } = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { DefinePlugin, NormalModuleReplacementPlugin } = require('webpack');
+const { DefinePlugin, NormalModuleReplacementPlugin, BannerPlugin } = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 const packageJson = require('./package.json');
@@ -62,6 +62,14 @@ module.exports = (env = {}) => {
       new BundleAnalyzerPlugin({
         analyzerMode: 'static', // Generates file instead of starting a web server
       })
+    );
+  }
+
+  if (env.linux) {
+    config.plugins.splice(0,
+      0,
+      // https://stackoverflow.com/questions/40755149/how-to-keep-my-shebang-in-place-using-webpack
+      new BannerPlugin({ banner: "#!/usr/bin/env node", raw: true })
     );
   }
 
