@@ -3,7 +3,7 @@
 NAME=$(node -p "require('./package.json').name");
 VERSION=$(node -p "require('./package.json').version");
 
-DOCKER_USERNAME="toxsickcoder"
+DOCKER_USERNAME="freekmencke"
 
 docker build -t "$DOCKER_USERNAME/$NAME:$VERSION" -t "$DOCKER_USERNAME/$NAME:latest" .
 

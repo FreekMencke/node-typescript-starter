@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Docker build
-        run: docker build --rm -t toxsickcoder/node-typescript-starter:latest .
+        run: docker build --rm -t freekmencke/node-typescript-starter:latest .
 
       - name: Docker run
-        run: docker run --rm toxsickcoder/node-typescript-starter:latest
+        run: docker run --rm freekmencke/node-typescript-starter:latest
 
