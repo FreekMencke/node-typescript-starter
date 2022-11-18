@@ -18,13 +18,15 @@
     "build:meta:prod": "node ./build/esbuild.js --meta",
     "build:docker": "docker build --rm -t freekmencke/node-typescript-starter:latest .",
     "deploy:docker": "sh ./scripts/deploy.sh",
-    "lint": "eslint . --ext .ts,.js"
+    "lint": "eslint . --ext .ts,.js",
+    "cz": "git cz"
   },
   "devDependencies": {
     "@es-exec/esbuild-plugin-start": "^0.0.4",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
+    "commitizen": "^4.2.5",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.15.14",
