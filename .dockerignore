@@ -1,9 +1,10 @@
+.github
+.vscode
 dist
 node_modules
 scripts
 .editorconfig
 .gitignore
-.travis.yml
 Dockerfile
 LICENSE
 README.md

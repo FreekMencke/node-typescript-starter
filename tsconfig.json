@@ -8,6 +8,7 @@
     "noUnusedLocals": true,
     "removeComments": true,
     "strict": true,
+    "useDefineForClassFields": false,
     "typeRoots": ["node_modules/@types"]
   },
   "include": ["src/**/*.ts"],
