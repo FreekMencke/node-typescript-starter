@@ -1,6 +1,6 @@
 {
   "name": "node-typescript-starter",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Freek Mencke",
   "homepage": "https://twitter.com/FreekMencke",
   "repository": {
@@ -9,32 +9,30 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack --progress --env development --env nodemon",
-    "start:prod": "webpack --progress --env nodemon",
-    "start:ci": "cross-env-shell node ./dist/$npm_package_name",
-    "start:dev": "cross-env-shell node --inspect ./dist/$npm_package_name",
-    "build:ci": "webpack",
-    "build:dev": "webpack --env development",
-    "build:prod": "webpack --progress",
-    "build:docker": "cross-env-shell docker build --rm -t freekmencke/$npm_package_name:latest .",
+    "start": "node ./build/esbuild.js --dev --watch --run",
+    "start:prod": "node ./build/esbuild.js --watch --run",
+    "start:ci": "node ./build/esbuild.js --run",
+    "build": "node ./build/esbuild.js --dev",
+    "build:prod": "node ./build/esbuild.js",
+    "build:meta": "node ./build/esbuild.js --dev --meta",
+    "build:meta:prod": "node ./build/esbuild.js --meta",
+    "build:docker": "docker build --rm -t freekmencke/node-typescript-starter:latest .",
     "deploy:docker": "sh ./scripts/deploy.sh",
-    "analyse:dev": "webpack --progress --env development --env analyse && start dist/report.html",
-    "analyse:prod": "webpack --progress --env analyse && start dist/report.html",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts,.js",
+    "cz": "git cz"
   },
   "devDependencies": {
-    "@types/node": "^18.7.16",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
-    "@typescript-eslint/parser": "^5.36.2",
+    "@es-exec/esbuild-plugin-start": "^0.0.4",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "commitizen": "^4.2.5",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.23.0",
-    "nodemon-webpack-plugin": "^4.8.1",
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.8.3",
-    "webpack": "^5.74.0",
-    "webpack-bundle-analyzer": "^4.6.1",
-    "webpack-cli": "^4.10.0"
+    "esbuild": "^0.15.14",
+    "eslint": "^8.27.0",
+    "minimist": "^1.2.7",
+    "typescript": "^4.9.3"
   },
   "config": {
     "commitizen": {

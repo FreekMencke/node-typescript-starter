@@ -1,10 +1,9 @@
 FROM node:18-alpine as builder
 WORKDIR /usr/src/app/
-COPY package.json package-lock.json ./
-RUN npm ci
 COPY . .
+RUN npm ci
 RUN npm run lint
-RUN npm run build:ci
+RUN npm run build:prod
 
 FROM node:18-alpine
 WORKDIR /usr/app/

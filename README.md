@@ -16,11 +16,15 @@ The application will build and run the **Node Typescript Starter**.
 
 ## Features
 
-- TypeScript ESLint (TSLint is deprecated)
 - Strict TSConfig
+- [esbuild](https://esbuild.github.io/)
+- ESLint
 - EditorConfig
-- Different configs for Dev and Prod
-- Webpack watch (nodemon)
-- BundleAnalyser
-- Docker
+- Separate Dev/Prod config files
+- Docker support
 - Github Action CI
+
+### Analyzing your bundle
+
+With esbuild we can generate a `meta.json` file using the `npm run build:meta` or `npm run build:meta:prod` commands, which we can then can be uploaded to [Bundle Buddy](https://bundle-buddy.com/esbuild) to perform a detailed bundle analasys.
+
