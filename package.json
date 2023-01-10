@@ -2,7 +2,7 @@
   "name": "node-typescript-starter",
   "version": "3.0.0",
   "author": "Freek Mencke",
-  "homepage": "https://twitter.com/FreekMencke",
+  "homepage": "https://github.com/FreekMencke",
   "repository": {
     "type": "git",
     "url": "https://github.com/FreekMencke/node-typescript-starter"
@@ -27,7 +27,6 @@
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "commitizen": "^4.2.5",
-    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.15.14",
     "eslint": "^8.27.0",
