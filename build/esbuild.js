@@ -16,13 +16,13 @@ const prodConfig = {
 /** @type esbuild.BuildOptions */
 const config = {
   entryPoints: ['src/main.ts'],
-  outfile: `dist/${process.env.npm_package_name}.js`,
+  outfile: 'dist/main.js',
   bundle: true,
   platform: 'node',
   logLevel: 'info',
 
   define: {
-    VERSION: 'process.env.npm_package_version',
+    VERSION: JSON.stringify(process.env.npm_package_version),
     DEVELOP: !!argv.dev,
   },
 
@@ -30,7 +30,7 @@ const config = {
   plugins: [
     fileReplacer(
       /[\\/]src[\\/]config[\\/]config.ts$/,
-      path => argv.dev ? path.replace('config.ts', 'config.dev.ts') : path
+      path => argv.dev ? path.replace('config.ts', 'config.dev.ts') : path,
     ),
   ],
 
@@ -38,7 +38,7 @@ const config = {
   ...(argv.dev ? devConfig : prodConfig),
 };
 
-if (argv.run) config.plugins.push(require('@es-exec/esbuild-plugin-start').default({ script: `node dist/${process.env.npm_package_name}.js` }));
+if (argv.run) config.plugins.push(require('@es-exec/esbuild-plugin-start').default({ script: 'node dist/main.js' }));
 
 esbuild
   .build(config)

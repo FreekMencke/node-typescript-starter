@@ -8,4 +8,4 @@ RUN npm run build:prod
 FROM node:18-alpine
 WORKDIR /usr/app/
 COPY --from=builder /usr/src/app/dist/ ./
-CMD [ "node", "node-typescript-starter.js" ]
+CMD [ "node", "main.js" ]
