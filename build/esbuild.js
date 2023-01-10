@@ -23,7 +23,7 @@ const config = {
 
   define: {
     VERSION: JSON.stringify(process.env.npm_package_version),
-    DEVELOP: !!argv.dev,
+    DEVELOP: JSON.stringify(!!argv.dev),
   },
 
   watch: argv.watch,
